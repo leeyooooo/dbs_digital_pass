@@ -4,8 +4,10 @@ import { Modal, Title, Text, Button, Flex } from "@mantine/core";
 const TaskModal = ({ opened, close, order, onSubmit }) => {
   const ansOption = ["A", "B", "C", "D"];
   const [isSubmit, setIsSubmit] = useState(false);
+  const [isSelect, setIsSelect] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
   const handleOptionClick = (option) => {
+    setIsSelect(true);
     setSelectedOption(option);
   };
 
@@ -44,7 +46,7 @@ const TaskModal = ({ opened, close, order, onSubmit }) => {
             radius={"xl"}
             variant="outline"
             color="violet"
-            disabled={isSubmit}
+            disabled={isSubmit || !isSelect}
             onClick={() => {
               onSubmit(selectedOption);
               setIsSubmit(true);

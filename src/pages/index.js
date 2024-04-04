@@ -1,4 +1,4 @@
-import { AppShell, Button, Flex, Text, Paper } from "@mantine/core";
+import { Button, Flex, Text, Paper } from "@mantine/core";
 import { useRouter } from "next/router";
 
 export default function Home() {

@@ -1,7 +1,6 @@
-import { Flex, Title, Button, Paper, Modal } from "@mantine/core";
+import { Flex, Title, Button } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
-import { IoIosCloseCircle } from "react-icons/io";
 import TaskModal from "@/components/TaskBlock/TaskModal";
 import { useState } from "react";
 const TaskSection = ({ order, handleAns, isComplete, matchResult }) => {

@@ -1,4 +1,4 @@
-import { Button, Flex, Text, Paper } from "@mantine/core";
+import { Button, Flex, Paper } from "@mantine/core";
 import React, { useState } from "react";
 import TaskSection from "@/components/TaskBlock/TaskSection";
 const TaskBlock = () => {

@@ -1,7 +1,7 @@
 "use client"
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Html5Qrcode } from "html5-qrcode";
-import { AppShell, Button, Flex, Text, Paper } from "@mantine/core";
+import { Button, Flex, Text, Paper } from "@mantine/core";
 
 const QRScanner = () => {
   const [result, setResult] = useState("");

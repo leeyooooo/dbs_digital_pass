@@ -1,11 +1,7 @@
 import {
   createTheme,
   MantineProvider,
-  AppShell,
-  Button,
-  Flex,
-  Text,
-  Paper,
+  AppShell
 } from "@mantine/core";
 
 import "@mantine/core/styles.css";
