@@ -39,6 +39,7 @@ export default function Home() {
           variant="outline"
           size="md"
           radius="xl"
+          w={"250px"}
         >
           Activate
         </Button>
