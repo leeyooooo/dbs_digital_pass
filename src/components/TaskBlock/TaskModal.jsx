@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import { Modal, Title, Text, Button, Flex } from "@mantine/core";
+import { ansOption } from "@/constants";
 
 const TaskModal = ({ opened, close, order, onSubmit }) => {
-  const ansOption = ["A", "B", "C", "D"];
-  const [isSubmit, setIsSubmit] = useState(false);
-  const [isSelect, setIsSelect] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
   const handleOptionClick = (option) => {
-    setIsSelect(true);
     setSelectedOption(option);
   };
 
@@ -15,14 +12,14 @@ const TaskModal = ({ opened, close, order, onSubmit }) => {
     <Modal
       opened={opened}
       onClose={close}
-      title={`Zone ${order} Quiz`}
+      title={`Zone ${order} 測驗`}
+      align={"center"}
+      overlayProps={{backgroundColor: 'blue'}}
+      style={{backgroundColor: 'blue'}}
       centered
     >
-      <Title order={3}>Quiz Description</Title>
-      <Text>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti odio
-        natus suscipit sequi quo fugit accusamus facere. Aperiam, a eveniet.
-      </Text>
+      <Title order={3} pb={"xl"}>Quiz Description</Title>
+      
       <Flex
         gap="md"
         justify="center"
@@ -41,28 +38,25 @@ const TaskModal = ({ opened, close, order, onSubmit }) => {
             {opt}
           </Button>
         ))}
-        <Flex justify={"space-between"} w={"100%"} px={"lg"}>
+        <Flex justify={"space-between"} w={"100%"} px={"lg"} pt={"xl"}>
           <Button
             radius={"xl"}
             variant="outline"
             color="violet"
-            disabled={isSubmit || !isSelect}
             onClick={() => {
               onSubmit(selectedOption);
-              setIsSubmit(true);
               close();
             }}
           >
-            Submit
+            送出
           </Button>
           <Button
             radius={"xl"}
             variant="outline"
             color="violet"
-            disabled={isSubmit}
             onClick={() => close()}
           >
-            Not Sure
+            返回
           </Button>
         </Flex>
       </Flex>

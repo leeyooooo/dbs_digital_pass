@@ -1,19 +1,12 @@
-import { Flex, Text, Paper } from "@mantine/core";
+import { Flex, Text } from "@mantine/core";
 import TaskBlock from "@/components/TaskBlock";
 
 const TaskBoard = () => {
   return (
     <Flex mih={50} gap="md" justify="center" align="center" direction="column">
-      <Paper shadow="xs" withBorder p="xl">
-        <Text>Paper is the most basic ui component</Text>
-        <Text>
-          Use it to create cards, dropdowns, modals and other components that
-          require background with shadow
-        </Text>
-      </Paper>
-      <Paper shadow="xs" withBorder p="xl">
-        <Text>Paper is the most basic ui component sadasdsa</Text>
-      </Paper>
+      <Text c={"white"} align="center" fw={"bold"}>
+        答案都藏在每個zone的攤位中，一定要仔細體驗喔！全部答對的同仁可以獲得幸運轉盤機會！​​
+      </Text>
       <Flex
         mih={50}
         gap="md"

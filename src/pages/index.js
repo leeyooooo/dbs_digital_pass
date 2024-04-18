@@ -1,11 +1,19 @@
-import { Button, Flex, Text, Paper } from "@mantine/core";
+import {
+  Button,
+  Flex,
+  Box,
+  Text,
+  BackgroundImage,
+  Title,
+  Center,
+} from "@mantine/core";
 import { useRouter } from "next/router";
-
+import Border from "@/assets/Border.png";
 export default function Home() {
   const router = useRouter();
 
   return (
-    <>
+    <Box maw={300} mx="auto">
       <Flex
         mih={50}
         gap="md"
@@ -13,37 +21,26 @@ export default function Home() {
         align="center"
         direction="column"
       >
-        <Paper shadow="xs" withBorder p="xl">
-          <Text>Paper is the most basic ui component</Text>
-          <Text>
-            Use it to create cards, dropdowns, modals and other components that
-            require background with shadow
+        <Title order={1} c={"white"}>
+          Digital Passport
+        </Title>
+        <BackgroundImage p={"lg"} h={"190px"} src={Border.src}>
+          <Text c={"white"} align="center" fz={"xl"} h={"100%"} mt={"lg"}>
+            歡迎踏上FOF的旅程，試著完成現場答題闖關活動，爭取獲得獲得幸運轉盤資格贏得大獎​
           </Text>
-        </Paper>
-        <Paper shadow="xs" withBorder p="xl">
-          <Text>Paper is the most basic ui component</Text>
-          <Text>
-            Use it to create cards, dropdowns, modals and other components that
-            require background with shadow
-          </Text>
-        </Paper>
-        <Paper shadow="xs" withBorder p="xl">
-          <Text>Paper is the most basic ui component</Text>
-          <Text>
-            Use it to create cards, dropdowns, modals and other components that
-            require background with shadow
-          </Text>
-        </Paper>
+        </BackgroundImage>
         <Button
           onClick={() => router.push("/TaskBoard")}
-          variant="outline"
+          variant="default"
+          color="rgba(207, 160, 219, 1)"
           size="md"
           radius="xl"
           w={"250px"}
+          mt={"xl"}
         >
-          Activate
+          開始
         </Button>
       </Flex>
-    </>
+    </Box>
   );
 }
