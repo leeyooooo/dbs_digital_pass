@@ -19,7 +19,6 @@ const TaskModal = ({ opened, close, order, onSubmit }) => {
       centered
     >
       <Title order={3} pb={"xl"}>Quiz Description</Title>
-      
       <Flex
         gap="md"
         justify="center"
@@ -47,6 +46,7 @@ const TaskModal = ({ opened, close, order, onSubmit }) => {
               onSubmit(selectedOption);
               close();
             }}
+            disabled={!selectedOption}
           >
             送出
           </Button>
