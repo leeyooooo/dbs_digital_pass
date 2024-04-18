@@ -1,9 +1,9 @@
-import { Flex, Title, Button, Paper, Modal } from "@mantine/core";
+import { Flex, Title, Button } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
-import { IoIosCloseCircle } from "react-icons/io";
 import TaskModal from "@/components/TaskBlock/TaskModal";
 import { useState } from "react";
+
 const TaskSection = ({ order, handleAns, isComplete, matchResult }) => {
   const [opened, { open, close }] = useDisclosure(false);
   const [isSubmit, setIsSubmit] = useState(false);
@@ -18,14 +18,11 @@ const TaskSection = ({ order, handleAns, isComplete, matchResult }) => {
           handleAns({ [order]: ans });
         }}
       />
-      <Title order={2} pr={"xs"}>
-        0{order}
-      </Title>
       <Button
-        w={"220px"}
+        w={"200px"}
         onClick={open}
-        variant={isSubmit ? "filled" : "outline"}
-        color="grey"
+        variant={"filled"}
+        color={isSubmit? "cyan" :"grey"}
       >
         Zone {order}
       </Button>
