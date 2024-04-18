@@ -3,7 +3,7 @@ import {
   MantineProvider,
   AppShell,
   BackgroundImage,
-  Image
+  Image,
 } from "@mantine/core";
 
 import "@mantine/core/styles.css";
@@ -17,13 +17,9 @@ const theme = createTheme({
 export default function App({ Component, pageProps }) {
   return (
     <MantineProvider theme={theme}>
-      <BackgroundImage bgsz={"cover"} src={Background.src}>
+      <BackgroundImage bgsz={"cover"} src={Background.src} h={"844px"} p={"md"}>
         <Image src={Title.src} />
-        <AppShell>
-          <AppShell.Main p={"sm"}>
-            <Component {...pageProps} />
-          </AppShell.Main>
-        </AppShell>
+        <Component {...pageProps} />
       </BackgroundImage>
     </MantineProvider>
   );
