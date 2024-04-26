@@ -82,7 +82,13 @@ const TaskBlock = () => {
               radius={"xl"}
               color="violet"
               mt={"sm"}
-              onClick={() => router.push("/Fail")}
+              onClick={() => router.push(
+                {
+                  pathname: "/Fail",
+                  query: { isFail: !isCorrect },
+                },
+                "/Fail"
+              )}
             >
               下一步
             </Button>

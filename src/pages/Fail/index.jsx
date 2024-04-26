@@ -1,8 +1,20 @@
 import { Flex, Text, Image, BackgroundImage } from "@mantine/core";
 import LoseBackground from "@/assets/LoseBackground.png";
 import LoseIcon from "@/assets/LoseIcon.png";
+import { useRouter } from "next/router";
 
 const Fail = () => {
+  const router = useRouter();
+  const { isFail } = router.query;
+
+  if (!isFail) {
+    return (
+      <Text c={"white"} p={"lg"} fz={"25px"} align="center">
+        歡迎回首頁遊玩喔 ：）
+      </Text>
+    );
+  }
+
   return (
     <Flex
       mih={50}
