@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Modal, Title, Text, Button, Flex } from "@mantine/core";
-import { ansOption } from "@/constants";
+import { Modal, Title, Button, Flex } from "@mantine/core";
+import { ansOption, questions } from "@/constants";
 
 const TaskModal = ({ opened, close, order, onSubmit }) => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -14,11 +14,13 @@ const TaskModal = ({ opened, close, order, onSubmit }) => {
       onClose={close}
       title={`Zone ${order} 測驗`}
       align={"center"}
-      overlayProps={{backgroundColor: 'blue'}}
-      style={{backgroundColor: 'blue'}}
+      overlayProps={{ backgroundColor: "blue" }}
+      style={{ backgroundColor: "blue" }}
       centered
     >
-      <Title order={3} pb={"xl"}>Quiz Description</Title>
+      <Title order={3} pb={"xl"}>
+        {questions[order - 1]}
+      </Title>
       <Flex
         gap="md"
         justify="center"

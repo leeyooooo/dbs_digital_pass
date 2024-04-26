@@ -1,9 +1,21 @@
 import { Flex, Text, Image, BackgroundImage, Box } from "@mantine/core";
+import { useRouter } from "next/router";
 import PassBackground from "@/assets/PassBackground.png";
 import PassIcon from "@/assets/PassIcon.png";
 import Map from "@/assets/Map.png";
 
 const Success = () => {
+  const router = useRouter();
+  const { isCorrect } = router.query;
+
+  if (!isCorrect) {
+    return (
+      <Text c={"white"} p={"lg"} fz={"25px"} align="center">
+        歡迎回首頁遊玩喔 ：）
+      </Text>
+    );
+  }
+
   return (
     <Flex mih={50} justify="center" align="center" direction="column">
       <BackgroundImage
