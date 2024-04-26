@@ -1,4 +1,4 @@
-import { Button, Flex, Paper, Box } from "@mantine/core";
+import { Button, Flex, Box } from "@mantine/core";
 import React, { useState, useEffect } from "react";
 import TaskSection from "@/components/TaskBlock/TaskSection";
 import { compareArr } from "@/utils";
@@ -14,7 +14,6 @@ const TaskBlock = () => {
   const [matchResults, setMatchResults] = useState({});
 
   useEffect(() => {
-    console.log(ansObj);
     if (Object.keys(ansObj).length === 6) {
       setDisabledBtn(false);
       setIsCorrect(compareArr(Object.values(ansObj), mockAns));
@@ -36,7 +35,12 @@ const TaskBlock = () => {
     setMatchResults(results);
   };
   return (
-    <Box shadow="xs" withBorder p="xl" style={{ backgroundColor: "rgba(234, 184, 255, 0.3)" }}>
+    <Box
+      shadow="xs"
+      withBorder
+      p="xl"
+      style={{ backgroundColor: "rgba(234, 184, 255, 0.3)" }}
+    >
       <Flex
         justify="center"
         align="center"
@@ -60,7 +64,15 @@ const TaskBlock = () => {
               radius={"xl"}
               color="violet"
               mt={"sm"}
-              onClick={() => router.push("/Success")}
+              onClick={() =>
+                router.push(
+                  {
+                    pathname: "/Success",
+                    query: { isCorrect: isCorrect },
+                  },
+                  "/Success"
+                )
+              }
             >
               領獎去
             </Button>
