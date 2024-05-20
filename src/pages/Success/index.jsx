@@ -1,7 +1,6 @@
 import { Flex, Text, Image, BackgroundImage, Box } from "@mantine/core";
 import { useRouter } from "next/router";
 import PassBackground from "@/assets/PassBackground.png";
-import PassIcon from "@/assets/PassIcon.png";
 import Map from "@/assets/Map.png";
 
 const Success = () => {
@@ -30,16 +29,9 @@ const Success = () => {
         </Text>
       </BackgroundImage>
       <Box mt={"xl"}>
-        <Text c={"white"}>我們在這</Text>
+        <Text c={"white"} ta={"center"}>我們在這</Text>
         <Image src={Map.src} />
       </Box>
-      <Image
-        src={PassIcon.src}
-        pos={"absolute"}
-        w={"60px"}
-        top={"200px"}
-        right={"0"}
-      />
     </Flex>
   );
 };
