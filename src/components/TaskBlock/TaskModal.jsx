@@ -4,7 +4,7 @@ import { ansOption, questions, answers } from "@/constants";
 
 const List = () => {
   return (
-    <ol type="a" style={{ textAlign: "start", margin:0 }}>
+    <ol type="a" style={{ textAlign: "start", margin: 0 }}>
       <li>Digify: GenAI: An overview</li>
       <li>
         Digify: Navigation the GenAI landscape - A Guide for Business
@@ -33,9 +33,7 @@ const TaskModal = ({ opened, close, order, onSubmit }) => {
       style={{ backgroundColor: "blue" }}
       centered
     >
-      <Title order={3}>
-        {questions[order - 1]}
-      </Title>
+      <Title order={3}>{questions[order - 1]}</Title>
       {order === 5 ? <List /> : <></>}
       <Flex
         gap="md"
@@ -65,6 +63,14 @@ const TaskModal = ({ opened, close, order, onSubmit }) => {
             radius={"xl"}
             variant="outline"
             color="violet"
+            onClick={() => close()}
+          >
+            返回
+          </Button>
+          <Button
+            radius={"xl"}
+            variant="outline"
+            color="violet"
             onClick={() => {
               onSubmit(selectedOption);
               close();
@@ -72,14 +78,6 @@ const TaskModal = ({ opened, close, order, onSubmit }) => {
             disabled={!selectedOption}
           >
             送出
-          </Button>
-          <Button
-            radius={"xl"}
-            variant="outline"
-            color="violet"
-            onClick={() => close()}
-          >
-            返回
           </Button>
         </Flex>
       </Flex>
